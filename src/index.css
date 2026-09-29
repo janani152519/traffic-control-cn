@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap');
+@import 'tailwindcss';
+
+:root {
+  --background: #F4EFE6;
+  --background-alt: #EBE4D6;
+  --foreground: #141312;
+  --card: #FCFAF7;
+  --card-alt: #F3ECE1;
+  --card-foreground: #181715;
+  --primary: #121110;
+  --primary-foreground: #FCFAF7;
+  --secondary: #EBE4D6;
+  --secondary-foreground: #2B2824;
+  --muted: #E6DFD2;
+  --muted-foreground: #5C564C;
+  --accent: #0284C7;
+  --accent-foreground: #ffffff;
+  --border: #D8CEBD;
+  --border-subtle: #E8E1D3;
+  --border-dark: #1F1D1A;
+  --ring: #121110;
+  --radius: 6px;
+  --danger: #DC2626;
+  --warning: #D97706;
+  --success: #059669;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Plus Jakarta Sans', 'Rajdhani', -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-mono-tech {
+  font-family: 'Share Tech Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+.font-display {
+  font-family: 'Rajdhani', 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #EBE4D6;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4B9A6;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9E927E;
+}
+
+/* Elegant Warm Beige Architectural Grid */
+.noc-grid {
+  background-color: #F4EFE6;
+  background-image:
+    linear-gradient(rgba(70, 55, 35, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(70, 55, 35, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Canvas beige background */
+.canvas-bg {
+  background-color: #EDE6D8;
+  background-image:
+    radial-gradient(circle, rgba(60, 48, 30, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Refined Glow Effects tuned for high-contrast presentation */
+.glow-blue {
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
+}
+.glow-green {
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.25);
+}
+.glow-red {
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.25);
+}
+.glow-amber {
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.25);
+}
+.glow-dark {
+  box-shadow: 0 6px 18px rgba(18, 17, 16, 0.35);
+}
+
+/* Panels */
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(45, 38, 28, 0.05), 0 3px 8px rgba(45, 38, 28, 0.03);
+}
+
+.panel-header {
+  border-bottom: 1px solid var(--border);
+  padding: 8px 12px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: #EFE8DC;
+  border-top-left-radius: calc(var(--radius) - 1px);
+  border-top-right-radius: calc(var(--radius) - 1px);
+}
+
+/* Animations */
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.9; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes congestion-flash {
+  0%, 100% { background: rgba(220, 38, 38, 0.12); border-color: #DC2626; }
+  50% { background: rgba(220, 38, 38, 0.24); border-color: #B91C1C; }
+}
+
+@keyframes reroute-flash {
+  0%, 100% { background: rgba(5, 150, 105, 0.1); border-color: #059669; }
+  50% { background: rgba(5, 150, 105, 0.22); border-color: #10B981; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-blink { animation: blink 1s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 8s linear infinite; }
+.animate-congestion { animation: congestion-flash 0.8s ease-in-out infinite; }
+.animate-reroute { animation: reroute-flash 1s ease-in-out infinite; }
+
+/* Status indicators */
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 4px currentColor;
+}
+
+/* Recharts overrides for Warm Beige */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #DDD5C7 !important;
+  stroke-dasharray: 3 3;
+}
+.recharts-text {
+  fill: #5C564C !important;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+/* Tooltip */
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background: #181716 !important;
+  border: 1px solid #2B2824 !important;
+  color: #FCFAF7 !important;
+  border-radius: 6px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+}

@@ -1,0 +1,10 @@
+{
+  "description": "Real-time SDN traffic dashboard visualizes network flow, detects congestion, and dynamically reroutes traffic to optimize performance and reduce delays.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
